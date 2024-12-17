@@ -1,5 +1,5 @@
 #Trabalho de POO do IFRO calama
-#Grupo: Marcos Vinnicius, Kaio de Lima, Guilherme Silva, Ítalo Sebastian
+#Grupo: Geovana Garcia, Theo Henrique, Ítalo Silva
 #Porfessora: Camila Serrão
 #Turma: 2º M Informática
 
@@ -50,13 +50,57 @@ if tipo_user == 1:
                         print('=' * 50)
                         print('CADASTRO'.center(50))
                         print('=' * 50)
-                        aluno_nome = input("Nome: ")
+                        while True:
+                                try:
+                                        aluno_nome = input("Nome: ")
+                                       
+                                        if aluno_nome.isalpha():
+                                                break
+                                        else:
+                                                print("Digite apenas letras")
+                                                raise ValueError
+                                except ValueError:
+                                        print('\033[31mTente novamente!\033[m')
+
+
                         aluno_email = input("Email: ")
                         aluno_senha = input("Senha: ")
-                        aluno_n_telefone = input("Número de telefone: ")
+
+
+                        while True:
+                                try:
+                                        aluno_n_telefone = input("Número de telefone: ")
+                                        if aluno_n_telefone.isnumeric():
+                                                break
+                                        else:
+                                                print('Digite apenas números!')
+                                                raise ValueError
+                                except ValueError:
+                                        print('\033[31mTente novamente!\033[m')
+
+
+
                         aluno_curso = input("Curso: ")
+
+
+
                         aluno_turma = input("Turma: ")
-                        aluno_cpf = input("CPF: ")
+
+
+                        while True:
+                                try:
+                                        aluno_cpf = input("CPF: ") 
+                                        if aluno_cpf.isnumeric():
+                                                break
+                                        else:
+                                                print('Digite apenas números!')
+                                                raise ValueError
+                                except ValueError:
+                                        print('\033[31mTente novamente!\033[m')
+
+                        
+
+
                         aluno_matricula = input("Matrícula: ")
                         aluno_dias_contraturno = input('Dias de contraturno (Digite 2 para Segunda, 3 para Terça, etc...): ')
 
