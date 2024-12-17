@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 import time
 import datetime
-from googletrans import Translator
+#from googletrans import Translator
 
 banco_dados = {'Alunos': {},
                'Visitantes': {},
@@ -140,7 +140,8 @@ class Aluno(Usuario):
                 self.dias_nome_week.append('Sexta-feira')
 
     def almoco_gratis(self):
-
+       
+    
         eu_almoco_hj = False
         self.dias_semana()
         data_atual = datetime.datetime.now()
@@ -159,6 +160,7 @@ class Aluno(Usuario):
 
             print(f"Seus dias de almoço são: {self.dias_nome_week}. Hoje é {dia_semana_traduzido.text}, \033[32mportanto você não tem almoço grátis.\033[m")
             return eu_almoco_hj
+ 
 
 
 
@@ -237,11 +239,7 @@ class Restaurante(Usuario):
         else:
             return logado
 
-    """def visualizar_fila(self):
 
-    def visualizar_quant_pes(self):
-
-    def pessoas_almocaram(self):"""
 
 
 
