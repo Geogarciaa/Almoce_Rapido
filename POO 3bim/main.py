@@ -191,7 +191,7 @@ if tipo_user == 2:
                                                 else:
                                                         raise ValueError
                                         except ValueError:
-                                                print("\033[31mDigite apenas números!\033[m")
+                                                print("\033[31mSó é aceito números!\033[m")
 
                                 visitante_cpf = input("CPF: ")
 
