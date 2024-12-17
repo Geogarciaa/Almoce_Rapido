@@ -14,9 +14,18 @@ from funcoes import ForaDeAlcance
 # composição
 # Adicionando os alunos à lista de almoços grátis do primeiro aluno
 
+
 tipo_user = funcoes.loop_Pergunta('login', 'Tipo de usuário: ',
                                   ['Aluno', 'Visitante', 'Dono do restaurante', 'Funcionário do DEPAE'],
                                   'Usuário inexistente! TENTE NOVAMENTE!')
+
+while True:
+        try:
+                tipo_user = funcoes.loop_Pergunta('login', 'Tipo de usuário: ', ['Aluno', 'Visitante', 'Dono do restaurante', 'Funcionário do DEPAE'], 'Usuário inexistente! TENTE NOVAMENTE!')
+                break
+        except Exception:
+                print("ERRO!!, coloque um número.") 
+
 
 if tipo_user == 1:
 
