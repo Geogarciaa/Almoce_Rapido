@@ -19,5 +19,8 @@ def loop_Pergunta(titulo, pergunta, lista_de_opcoes, mensagem_erro):
         else:
             print(f'\033[31m{mensagem_erro}\033[m\n')
 
+class ForaDeAlcance(Exception):
+    pass
+
 
 
