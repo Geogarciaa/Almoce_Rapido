@@ -23,4 +23,12 @@ class ForaDeAlcance(Exception):
     pass
 
 
+class Numero_inexistente(Exception):
+    pass
+
+def verificar_digitos(resposta,n_digitos_max):
+    res= resposta.strip()
+    if len(res) < n_digitos_max or len(res) > n_digitos_max:
+        raise Numero_inexistente
+
 
