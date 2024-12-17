@@ -20,241 +20,242 @@ tipo_user = funcoes.loop_Pergunta('login', 'Tipo de usuário: ',
 
 if tipo_user == 1:
 
-    login_ou_cadastro = funcoes.loop_Pergunta('Cadastro ou login', 'Você deseja fazer login ou se cadastrar? ',
-                                              ['Login', 'Cadastro'], 'OPÇÃO INEXISTENTE! TENTE NOVAMENTE!')
-    while True:
-        if login_ou_cadastro == 1:
-            while True:
-                print('=' * 50)
-                print('LOGIN'.center(50))
-                print('=' * 50)
-                login_aluno_matric = input('Qual o nº da matrícula? ')
-                login_aluno_senha = input('Qual a senha? ')
+        login_ou_cadastro = funcoes.loop_Pergunta('Cadastro ou login', 'Você deseja fazer login ou se cadastrar? ',
+                                                ['Login', 'Cadastro'], 'OPÇÃO INEXISTENTE! TENTE NOVAMENTE!')
+        while True:
+                if login_ou_cadastro == 1:
+                        while True:
+                                print('=' * 50)
+                                print('LOGIN'.center(50))
+                                print('=' * 50)
+                                login_aluno_matric = input('Qual o nº da matrícula? ')
+                                login_aluno_senha = input('Qual a senha? ')
 
-                aluno_objeto = classe.Aluno('', '', login_aluno_senha, '', '', '', '', login_aluno_matric, '')
+                                aluno_objeto = classe.Aluno('', '', login_aluno_senha, '', '', '', '', login_aluno_matric, '')
 
-                if aluno_objeto.logar():
-                    lista_almoc_hj = classe.AlmocoGratis(aluno_objeto)
-                    print('Os alunos que têm direito a almoço grátis hoje são: ')
-                    print(lista_almoc_hj.exibir_almoco())
-                    exit()
+                                if aluno_objeto.logar():
+                                        lista_almoc_hj = classe.AlmocoGratis(aluno_objeto)
+                                        print('Os alunos que têm direito a almoço grátis hoje são: ')
+                                        print(lista_almoc_hj.exibir_almoco())
+                                        exit()
 
-                else:
-                    print('\n\033[31mUsuário inexistente!\033[m\n')
-                    print('=' * 50)
-                    ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
-                    if ir_pro_cadastro == 'S':
-                        login_ou_cadastro = 2
-                        break
+                                else:
+                                        print('\n\033[31mUsuário inexistente!\033[m\n')
+                                        print('=' * 50)
+                                        ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                        if ir_pro_cadastro == 'S':
+                                                login_ou_cadastro = 2
+                                                break
 
-        if login_ou_cadastro == 2:
-            print('=' * 50)
-            print('CADASTRO'.center(50))
-            print('=' * 50)
-            while True:
-                try:
-                    aluno_nome = input("Nome: ")
+                if login_ou_cadastro == 2:
+                        print('=' * 50)
+                        print('CADASTRO'.center(50))
+                        print('=' * 50)
+                        while True:
+                                try:
+                                        aluno_nome = input("Nome: ")
 
-                    if aluno_nome.isalpha():
-                        break
-                    else:
-                        print("Digite apenas letras")
-                        raise ValueError
-                except ValueError:
-                    print('\033[31mTente novamente!\033[m')
+                                        if aluno_nome.isalpha():
+                                                break
+                                        else:
+                                                print("Digite apenas letras")
+                                                raise ValueError
+                                except ValueError:
+                                        print('\033[31mTente novamente!\033[m')
 
-            aluno_email = input("Email: ")
-            aluno_senha = input("Senha: ")
+                        aluno_email = input("Email: ")
+                        aluno_senha = input("Senha: ")
 
-            while True:
-                try:
-                    aluno_n_telefone = input("Número de telefone: ")
-                    if aluno_n_telefone.isnumeric():
-                        break
-                    else:
-                        print('Digite apenas números!')
-                        raise ValueError
-                except ValueError:
-                    print('\033[31mTente novamente!\033[m')
+                        while True:
+                                try:
+                                        aluno_n_telefone = input("Número de telefone: ")
+                                        if aluno_n_telefone.isnumeric():
+                                                break
+                                        else:
+                                                print('Digite apenas números!')
+                                                raise ValueError
+                                except ValueError:
+                                        print('\033[31mTente novamente!\033[m')
 
-            aluno_curso = input("Curso: ")
+                        aluno_curso = input("Curso: ")
 
-            aluno_turma = input("Turma: ")
+                        aluno_turma = input("Turma: ")
 
-            while True:
-                try:
-                    aluno_cpf = input("CPF: ")
-                    if aluno_cpf.isnumeric():
-                        break
-                    else:
-                        print('Digite apenas números!')
-                        raise ValueError
-                except ValueError:
-                    print('\033[31mTente novamente!\033[m')
+                        while True:
+                                try:
+                                        aluno_cpf = input("CPF: ")
+                                        if aluno_cpf.isnumeric():
+                                                break
+                                        else:
+                                                print('Digite apenas números!')
+                                                raise ValueError
+                                except ValueError:
+                                        print('\033[31mTente novamente!\033[m')
 
-            while True:
-                try:
-                    aluno_matricula = input("Matrícula: ")
+                        while True:
+                                try:
+                                        aluno_matricula = input("Matrícula: ")
 
-                    if aluno_matricula.isnumeric():
-                        break
-                    else:
-                        print('Digite apenas números!')
-                        raise ValueError
+                                        if aluno_matricula.isnumeric():
+                                                break
+                                        else:
+                                                print('Digite apenas números!')
+                                                raise ValueError
 
-                except ValueError:
-                    print('\033[31mTente novamente!\033[m')
+                                except ValueError:
+                                        print('\033[31mTente novamente!\033[m')
 
-            while True:
-                try:
-                    aluno_dias_contraturno = input('Dias de contraturno (Digite 2 para Segunda, 3 para Terça, etc...): ')
+                        while True:
+                                try:
+                                        aluno_dias_contraturno = input('Dias de contraturno (Digite 2 para Segunda, 3 para Terça, etc...): ')
 
-                    if aluno_dias_contraturno.isalpha():
-                        raise ValueError
+                                        if aluno_dias_contraturno.isalpha():
+                                                raise ValueError
 
-                    if int(aluno_dias_contraturno) < 1 or int(aluno_dias_contraturno) > 5:
-                        raise ForaDeAlcance()
-                    else:
-                        break
+                                        if int(aluno_dias_contraturno) < 1 or int(aluno_dias_contraturno) > 5:
+                                                raise ForaDeAlcance()
+                                        else:
+                                                break
 
-                except ValueError:
-                    print("Por favor, insira um número inteiro válido.")
-                except ForaDeAlcance:
-                    print("Digite apenas número de 1 a 5.")
+                                except ValueError:
+                                        print("Por favor, insira um número inteiro válido.")
+                                except ForaDeAlcance:
+                                        print("Digite apenas número de 1 a 5.")
 
 
-            aluno_objeto = classe.Aluno(aluno_nome, aluno_email, aluno_senha, aluno_n_telefone, aluno_cpf, aluno_curso,
-                                        aluno_turma, aluno_matricula, aluno_dias_contraturno)
-            aluno_objeto.cadastrar()
+                        aluno_objeto = classe.Aluno(aluno_nome, aluno_email, aluno_senha, aluno_n_telefone, aluno_cpf, aluno_curso,
+                                                        aluno_turma, aluno_matricula, aluno_dias_contraturno)
+                        aluno_objeto.cadastrar()
 
-            login_ou_cadastro = 1
+                        login_ou_cadastro = 1
 
 if tipo_user == 2:
-    login_ou_cadastro = funcoes.loop_Pergunta('Cadastro ou login', 'Você deseja fazer login ou se cadastrar? ',
-                                              ['Login', 'Cadastro'], 'OPÇÃO INEXISTENTE! TENTE NOVAMENTE!')
-    while True:
-        if login_ou_cadastro == 1:
-            while True:
-                print('=' * 50)
-                print('LOGIN'.center(50))
-                print('=' * 50)
-                login_visitante_cpf = input('Qual o seu CPF? ')
-                login_visitante_senha = input('Qual a sua senha? ')
+        login_ou_cadastro = funcoes.loop_Pergunta('Cadastro ou login', 'Você deseja fazer login ou se cadastrar? ',
+                                                ['Login', 'Cadastro'], 'OPÇÃO INEXISTENTE! TENTE NOVAMENTE!')
+        while True:
+                if login_ou_cadastro == 1:
+                        while True:
+                                print('=' * 50)
+                                print('LOGIN'.center(50))
+                                print('=' * 50)
+                                login_visitante_cpf = input('Qual o seu CPF? ')
+                                login_visitante_senha = input('Qual a sua senha? ')
 
-                visitante_objeto = classe.Visitantes('', '', login_visitante_senha, '', login_visitante_cpf)
+                                visitante_objeto = classe.Visitantes('', '', login_visitante_senha, '', login_visitante_cpf)
 
-                if not visitante_objeto.logar():
-                    print('\n\033[31mUsuário inexistente!\033[m\n')
-                    print('=' * 50)
-                    ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
-                    if ir_pro_cadastro == 'S':
-                        login_ou_cadastro = 2
-                        break
+                                if not visitante_objeto.logar():
+                                        print('\n\033[31mUsuário inexistente!\033[m\n')
+                                        print('=' * 50)
 
-                else:
-                    visitante_objeto.logar()
-                    exit()
+                                        ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                if ir_pro_cadastro == 'S':
+                                        login_ou_cadastro = 2
+                                        break
 
-        if login_ou_cadastro == 2:
-            print('=' * 50)
-            print('CADASTRO'.center(50))
-            print('=' * 50)
-            visitante_nome = input("Nome: ")
-            visitante_email = input("Email: ")
-            visitante_senha = input("Senha: ")
-            visitante_n_telefone = input("Número de telefone: ")
-            visitante_cpf = input("CPF: ")
+                                else:
+                                        visitante_objeto.logar()
+                                        exit()
 
-            visitante_objeto = classe.Visitantes(visitante_nome, visitante_email, visitante_senha, visitante_n_telefone,
-                                                 visitante_cpf)
-            visitante_objeto.cadastrar()
-            login_ou_cadastro = 1
+                        if login_ou_cadastro == 2:
+                                print('=' * 50)
+                                print('CADASTRO'.center(50))
+                                print('=' * 50)
+                                visitante_nome = input("Nome: ")
+                                visitante_email = input("Email: ")
+                                visitante_senha = input("Senha: ")
+                                visitante_n_telefone = input("Número de telefone: ")
+                                visitante_cpf = input("CPF: ")
+
+                                visitante_objeto = classe.Visitantes(visitante_nome, visitante_email, visitante_senha, visitante_n_telefone,
+                                                                        visitante_cpf)
+                                visitante_objeto.cadastrar()
+                                login_ou_cadastro = 1
 
 if tipo_user == 3:
 
-    login_ou_cadastro = funcoes.loop_Pergunta('Cadastro ou login', 'Você deseja fazer login ou se cadastrar? ',
-                                              ['Login', 'Cadastro'], 'OPÇÃO INEXISTENTE! TENTE NOVAMENTE!')
-    while True:
-        if login_ou_cadastro == 1:
-            while True:
-                print('=' * 50)
-                print('LOGIN'.center(50))
-                print('=' * 50)
-                login_restaurante_cnpj = input('Qual o CPNJ? ')
-                login_restaurante_senha = input('Qual a senha? ')
+        login_ou_cadastro = funcoes.loop_Pergunta('Cadastro ou login', 'Você deseja fazer login ou se cadastrar? ',
+                                                ['Login', 'Cadastro'], 'OPÇÃO INEXISTENTE! TENTE NOVAMENTE!')
+        while True:
+                if login_ou_cadastro == 1:
+                        while True:
+                                print('=' * 50)
+                                print('LOGIN'.center(50))
+                                print('=' * 50)
+                                login_restaurante_cnpj = input('Qual o CPNJ? ')
+                                login_restaurante_senha = input('Qual a senha? ')
 
-                restaurante_objeto = classe.Restaurante('', '', login_restaurante_senha, "", "", login_restaurante_cnpj,
-                                                        '')
+                                restaurante_objeto = classe.Restaurante('', '', login_restaurante_senha, "", "", login_restaurante_cnpj,
+                                                                        '')
 
-                if not restaurante_objeto.logar():
-                    print('\n\033[31mUsuário inexistente!\033[m\n')
-                    print('=' * 50)
-                    ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
-                    if ir_pro_cadastro == 'S':
-                        login_ou_cadastro = 2
-                        break
+                                if not restaurante_objeto.logar():
+                                        print('\n\033[31mUsuário inexistente!\033[m\n')
+                                        print('=' * 50)
+                                        ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                if ir_pro_cadastro == 'S':
+                                        login_ou_cadastro = 2
+                                        break
 
-                else:
-                    restaurante_objeto.logar()
-                    exit()
+                                else:
+                                        restaurante_objeto.logar()
+                                        exit()
 
-        if login_ou_cadastro == 2:
-            print('=' * 50)
-            print('CADASTRO'.center(50))
-            print('=' * 50)
-            restaurante_nome = input("Nome do titular: ")
-            restaurante_email = input("Email: ")
-            restaurante_senha = input("Senha: ")
-            restaurante_n_telefone = input("Número de telefone: ")
-            restaurante_cpf = input("CPF: ")
-            restaurante_cnpj = input("CNPJ: ")
-            restaurante_nomeEmpresa = input("Nome do restaurante: ")
+                if login_ou_cadastro == 2:
+                        print('=' * 50)
+                        print('CADASTRO'.center(50))
+                        print('=' * 50)
+                        restaurante_nome = input("Nome do titular: ")
+                        restaurante_email = input("Email: ")
+                        restaurante_senha = input("Senha: ")
+                        restaurante_n_telefone = input("Número de telefone: ")
+                        restaurante_cpf = input("CPF: ")
+                        restaurante_cnpj = input("CNPJ: ")
+                        restaurante_nomeEmpresa = input("Nome do restaurante: ")
 
-            restaurante_objeto = classe.Restaurante(restaurante_nome, restaurante_email, restaurante_senha,
-                                                    restaurante_n_telefone, restaurante_cpf, restaurante_cnpj,
-                                                    restaurante_nomeEmpresa)
-            restaurante_objeto.cadastrar()
-            login_ou_cadastro = 1
+                        restaurante_objeto = classe.Restaurante(restaurante_nome, restaurante_email, restaurante_senha,
+                                                                restaurante_n_telefone, restaurante_cpf, restaurante_cnpj,
+                                                                restaurante_nomeEmpresa)
+                        restaurante_objeto.cadastrar()
+                        login_ou_cadastro = 1
 
 if tipo_user == 4:
 
-    login_ou_cadastro = funcoes.loop_Pergunta('Cadastro ou login', 'Você deseja fazer login ou se cadastrar? ',
-                                              ['Login', 'Cadastro'], 'OPÇÃO INEXISTENTE! TENTE NOVAMENTE!')
-    while True:
-        if login_ou_cadastro == 1:
-            while True:
-                print('=' * 50)
-                print('LOGIN'.center(50))
-                print('=' * 50)
-                login_depae_siape = input('Qual o nº do SIAPE? ')
-                login_depae_senha = input('Qual a sua senha? ')
+        login_ou_cadastro = funcoes.loop_Pergunta('Cadastro ou login', 'Você deseja fazer login ou se cadastrar? ',
+                                                ['Login', 'Cadastro'], 'OPÇÃO INEXISTENTE! TENTE NOVAMENTE!')
+        while True:
+                if login_ou_cadastro == 1:
+                        while True:
+                                print('=' * 50)
+                                print('LOGIN'.center(50))
+                                print('=' * 50)
+                                login_depae_siape = input('Qual o nº do SIAPE? ')
+                                login_depae_senha = input('Qual a sua senha? ')
 
-                depae_objeto = classe.Func_Depae('', '', login_depae_senha, '', '', login_depae_siape)
+                                depae_objeto = classe.Func_Depae('', '', login_depae_senha, '', '', login_depae_siape)
 
-                if not depae_objeto.logar():
-                    print('\n\033[31mUsuário inexistente!\033[m\n')
-                    print('=' * 50)
-                    ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
-                    if ir_pro_cadastro == 'S':
-                        login_ou_cadastro = 2
-                        break
+                                if not depae_objeto.logar():
+                                        print('\n\033[31mUsuário inexistente!\033[m\n')
+                                        print('=' * 50)
+                                        ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                        if ir_pro_cadastro == 'S':
+                                                login_ou_cadastro = 2
+                                                break
 
-                else:
-                    depae_objeto.logar()
-                    exit()
+                                else:
+                                        depae_objeto.logar()
+                                        exit()
 
-        if login_ou_cadastro == 2:
-            print('=' * 50)
-            print('CADASTRO'.center(50))
-            print('=' * 50)
-            depae_nome = input("Nome: ")
-            depae_email = input("Email: ")
-            depae_senha = input("Senha: ")
-            depae_n_telefone = input("Número de telefone: ")
-            depae_cpf = input("CPF: ")
-            depae_siape = input('Siape: ')
+                        if login_ou_cadastro == 2:
+                                print('=' * 50)
+                                print('CADASTRO'.center(50))
+                                print('=' * 50)
+                                depae_nome = input("Nome: ")
+                                depae_email = input("Email: ")
+                                depae_senha = input("Senha: ")
+                                depae_n_telefone = input("Número de telefone: ")
+                                depae_cpf = input("CPF: ")
+                                depae_siape = input('Siape: ')
 
-            depae_objeto = classe.Func_Depae(depae_nome, depae_email, depae_senha, depae_n_telefone, depae_cpf,
-                                             depae_siape)
-            depae_objeto.cadastrar()
-            login_ou_cadastro = 1
+                                depae_objeto = classe.Func_Depae(depae_nome, depae_email, depae_senha, depae_n_telefone, depae_cpf,
+                                                                depae_siape)
+                                depae_objeto.cadastrar()
+                                login_ou_cadastro = 1
