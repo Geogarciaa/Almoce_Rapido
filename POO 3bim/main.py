@@ -1,7 +1,9 @@
-# Trabalho de POO do IFRO calama
-# Grupo: Geovana Garcia, Theo Henrique, Ítalo Silva
-# Porfessora: Camila Serrão
-# Turma: 2º M Informática
+
+#Trabalho de POO do IFRO calama
+#Grupo: Geovana Cristine, Ítalo Sebastian, Theo Henrique 
+#Porfessora: Camila Serrão
+#Turma: 2º M Informática
+
 
 # ==============================================================================================
 
@@ -16,10 +18,6 @@ from funcoes import Numero_inexistente
 # composição
 # Adicionando os alunos à lista de almoços grátis do primeiro aluno
 
-
-tipo_user = funcoes.loop_Pergunta('login', 'Tipo de usuário: ',
-                                  ['Aluno', 'Visitante', 'Dono do restaurante', 'Funcionário do DEPAE'],
-                                  'Usuário inexistente! TENTE NOVAMENTE!')
 
 while True:
         try:
