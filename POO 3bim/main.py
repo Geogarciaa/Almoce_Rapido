@@ -17,7 +17,7 @@ while True:
         try:
                 tipo_user = funcoes.loop_Pergunta('login', 'Tipo de usuário: ', ['Aluno', 'Visitante', 'Dono do restaurante', 'Funcionário do DEPAE'], 'Usuário inexistente! TENTE NOVAMENTE!')
                 break
-        except EXcepition:
+        except Excepition:
                 print("Erro, coloque um número ")
 
 if tipo_user == 1:
