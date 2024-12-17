@@ -22,15 +22,18 @@ tipo_user = funcoes.loop_Pergunta('login', 'Tipo de usuário: ',
 while True:
         try:
                 tipo_user = funcoes.loop_Pergunta('login', 'Tipo de usuário: ', ['Aluno', 'Visitante', 'Dono do restaurante', 'Funcionário do DEPAE'], 'Usuário inexistente! TENTE NOVAMENTE!')
+
                 break
         except Exception:
-                print("ERRO!!, coloque um número.") 
+                print("ERRO!!, coloque um número.")
 
 
 if tipo_user == 1:
-
+       
         login_ou_cadastro = funcoes.loop_Pergunta('Cadastro ou login', 'Você deseja fazer login ou se cadastrar? ',
                                                 ['Login', 'Cadastro'], 'OPÇÃO INEXISTENTE! TENTE NOVAMENTE!')
+        
+      
         while True:
                 if login_ou_cadastro == 1:
                         while True:
@@ -169,10 +172,27 @@ if tipo_user == 2:
                                 print('=' * 50)
                                 print('CADASTRO'.center(50))
                                 print('=' * 50)
-                                visitante_nome = input("Nome: ")
-                                visitante_email = input("Email: ")
-                                visitante_senha = input("Senha: ")
-                                visitante_n_telefone = input("Número de telefone: ")
+                                while True:
+                                        try:
+                                                visitante_nome = input("Nome: ")
+                                                if visitante_nome.isalpha():
+                                                        break
+                                                else:
+                                                        raise ValueError
+                                        except ValueError :
+                                                print("\033[31mDigite apenas letras!\033[m")
+                                        visitante_email = input("Email: ")
+                                        visitante_senha = input("Senha: ")
+                                while True:
+                                        try:
+                                                visitante_n_telefone = input("Número de telefone: ")
+                                                if visitante_n_telefone.isnumeric() and visitante_n_telefone.isspace()==False:
+                                                        break
+                                                else:
+                                                        raise ValueError
+                                        except ValueError:
+                                                print("\033[31mDigite apenas números!\033[m")
+
                                 visitante_cpf = input("CPF: ")
 
                                 visitante_objeto = classe.Visitantes(visitante_nome, visitante_email, visitante_senha, visitante_n_telefone,

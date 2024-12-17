@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 import time
 import datetime
-from googletrans import Translator
+#from googletrans import Translator
 
 banco_dados = {'Alunos': {},
                'Visitantes': {},
