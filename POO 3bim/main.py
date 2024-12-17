@@ -8,6 +8,8 @@
 import classe
 import funcoes
 from funcoes import ForaDeAlcance
+from funcoes import verificar_digitos
+from funcoes import Numero_inexistente
 
 # aluno1= classes.Aluno('italo', 'idad', '123', 'dsada', '213213','dsad', 'dsad', '123')
 # aluno1.cadastrar()
@@ -210,8 +212,8 @@ if tipo_user == 2:
                                                         raise ValueError
                                         except ValueError :
                                                 print("\033[31mDigite apenas letras!\033[m")
-                                        visitante_email = input("Email: ")
-                                        visitante_senha = input("Senha: ")
+                                visitante_email = input("Email: ")
+                                visitante_senha = input("Senha: ")
                                 while True:
                                         try:
                                                 visitante_n_telefone = input("Número de telefone: ")
@@ -221,8 +223,21 @@ if tipo_user == 2:
                                                         raise ValueError
                                         except ValueError:
                                                 print("\033[31mSó é aceito números!\033[m")
+                                while True:
+                                        try:
+                                                visitante_n_telefone = input("Número de telefone: ")
+                                                verificar_digitos(visitante_n_telefone,11)
+                                                break
+                                        except Numero_inexistente:
+                                                print("\033[31mIsso não é um número de telefone válido.\033[m")
 
-                                visitante_cpf = input("CPF: ")
+                                while True:
+                                        try:
+                                                 visitante_cpf = input("CPF: ")
+                                                 verificar_digitos(visitante_cpf,11)
+                                                 break
+                                        except Numero_inexistente:
+                                                print("\033[31mIsso não é um número de CPF válido!\033[m")
 
                                 visitante_objeto = classe.Visitantes(visitante_nome, visitante_email, visitante_senha, visitante_n_telefone,
                                                                         visitante_cpf)
@@ -276,12 +291,51 @@ if tipo_user == 3:
                         print('=' * 50)
                         print('CADASTRO'.center(50))
                         print('=' * 50)
-                        restaurante_nome = input("Nome do titular: ")
+                        while True:
+                                try:
+                                        restaurante_nome = input("Nome do titular: ")
+                                        if restaurante_nome.isalpha():
+                                                        break
+                                        else:
+                                                        raise ValueError
+                                except ValueError :
+                                        print("\033[31mDigite apenas letras!\033[m")
+
                         restaurante_email = input("Email: ")
                         restaurante_senha = input("Senha: ")
-                        restaurante_n_telefone = input("Número de telefone: ")
-                        restaurante_cpf = input("CPF: ")
-                        restaurante_cnpj = input("CNPJ: ")
+                        while True:
+                                try:
+                                        restaurante_n_telefone = input("Número de telefone: ")
+                                        if restaurante_n_telefone.isnumeric() and restaurante_n_telefone.isspace()==False:
+                                                        break
+                                        else:
+                                                        raise ValueError
+                                except ValueError:
+                                                print("\033[31mSó é aceito números!\033[m")
+
+                        while True:
+                                        try:
+                                                restaurante_n_telefone = input("Número de telefone: ")
+                                                verificar_digitos(restaurante_n_telefone,11)
+                                                break
+                                        except Numero_inexistente:
+                                                print("\033[31mIsso não é um número de telefone válido.\033[m")
+
+                        while True:
+                                try:                  
+                                        restaurante_cpf = input("CPF: ")
+                                        verificar_digitos(restaurante_cpf,11)
+                                        break
+                                except Numero_inexistente:
+                                                print("\033[31mIsso não é um número de CPF válido!\033[m")
+                        while True:
+                                try:                       
+                                        restaurante_cnpj = input("CNPJ: ")
+                                        verificar_digitos(restaurante_cnpj,14)
+                                        break
+                                except Numero_inexistente:
+                                        print("\033[31mIsso não é um número de CNPJ válido!\033[m")
+
                         restaurante_nomeEmpresa = input("Nome do restaurante: ")
 
                         restaurante_objeto = classe.Restaurante(restaurante_nome, restaurante_email, restaurante_senha,
@@ -336,12 +390,73 @@ if tipo_user == 4:
                                 print('=' * 50)
                                 print('CADASTRO'.center(50))
                                 print('=' * 50)
-                                depae_nome = input("Nome: ")
+                                while True:
+                                        try:
+                                                 depae_nome = input("Nome: ")
+                                                 if depae_nome.isalpha():
+                                                        break
+                                                 else:
+                                                        raise ValueError
+                                        except ValueError :
+                                                print("\033[31mDigite apenas letras!\033[m")
+
                                 depae_email = input("Email: ")
                                 depae_senha = input("Senha: ")
-                                depae_n_telefone = input("Número de telefone: ")
-                                depae_cpf = input("CPF: ")
-                                depae_siape = input('Siape: ')
+
+                                while True:
+                                        try:
+                                                depae_n_telefone = input("Número de telefone: ")
+                                                if depae_n_telefone.isnumeric() and depae_n_telefone.isspace()==False:
+                                                        break
+                                                else:
+                                                        raise ValueError
+                                        except ValueError:
+                                                        print("\033[31mSó é aceito números!\033[m")
+
+                                while True:
+                                        try:
+                                                depae_n_telefone = input("Número de telefone: ")
+                                                verificar_digitos(depae_n_telefone,11)
+                                                break
+                                        except Numero_inexistente:
+                                                print("\033[31mIsso não é um número de telefone válido.\033[m")
+
+                                while True:
+                                        try:
+                                                depae_cpf = input("CPF: ")
+                                                if depae_cpf.isnumeric() and depae_cpf.isspace()==False:
+                                                        break
+                                                else:
+                                                        raise ValueError
+                                        except ValueError:
+                                                        print("\033[31mInsira números!\033[m")
+
+                                while True:
+                                        try:
+                                                 depae_cpf = input("CPF: ")
+                                                 verificar_digitos(depae_cpf,11)
+                                                 break
+                                        except Numero_inexistente:
+                                                print("\033[31mIsso não é um número de CPF válido!\033[m")
+
+                                while True:
+                                        try:       
+                                                depae_siape = input('Siape: ')
+                                                if depae_siape.isnumeric() and depae_siape.isspace()==False:
+                                                        break
+                                                else:
+                                                        raise ValueError
+                                        except ValueError:
+                                                        print("\033[31mInsira números!\033[m")
+                                
+                                
+                                while True:
+                                        try:
+                                                 depae_siape = input("SIAPE: ")
+                                                 verificar_digitos(depae_siape,7)
+                                                 break
+                                        except Numero_inexistente:
+                                                print("\033[31mIsso não é um número de SIAPE válido!\033[m")
 
                                 depae_objeto = classe.Func_Depae(depae_nome, depae_email, depae_senha, depae_n_telefone, depae_cpf,
                                                                 depae_siape)
