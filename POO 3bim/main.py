@@ -1,5 +1,5 @@
 #Trabalho de POO do IFRO calama
-#Grupo: Marcos Vinnicius, Kaio de Lima, Guilherme Silva, Ítalo Sebastian
+#Grupo: Geovana Cristine, Ítalo Sebastian, Theo Henrique 
 #Porfessora: Camila Serrão
 #Turma: 2º M Informática
 
@@ -13,7 +13,12 @@ import funcoes
 #composição
 # Adicionando os alunos à lista de almoços grátis do primeiro aluno
 
-tipo_user = funcoes.loop_Pergunta('login', 'Tipo de usuário: ', ['Aluno', 'Visitante', 'Dono do restaurante', 'Funcionário do DEPAE'], 'Usuário inexistente! TENTE NOVAMENTE!')
+while True:
+        try:
+                tipo_user = funcoes.loop_Pergunta('login', 'Tipo de usuário: ', ['Aluno', 'Visitante', 'Dono do restaurante', 'Funcionário do DEPAE'], 'Usuário inexistente! TENTE NOVAMENTE!')
+                break
+        except EXcepition:
+                print("Erro, coloque um número ")
 
 if tipo_user == 1:
 
