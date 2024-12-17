@@ -42,10 +42,25 @@ if tipo_user == 1:
                                 else:
                                         print('\n\033[31mUsuário inexistente!\033[m\n')
                                         print('=' * 50)
-                                        ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                        while True:
+                                                try:
+                                                        ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                                        if ir_pro_cadastro.isnumeric():
+                                                                raise ValueError
+                                                        if ir_pro_cadastro != 'N' and ir_pro_cadastro != 'S':
+                                                                raise ForaDeAlcance
+                                                        
+                                                        break
+                                                except ForaDeAlcance:
+                                                        print('\033[31mDigite S para SIM e N para NÃO.\033[m')
+                                                except ValueError:
+                                                        print('\033[31mDigite apenas letras.\033[m')
+
                                         if ir_pro_cadastro == 'S':
                                                 login_ou_cadastro = 2
                                                 break
+
+                                        
 
                 if login_ou_cadastro == 2:
                         print('=' * 50)
@@ -147,10 +162,24 @@ if tipo_user == 2:
                                         print('\n\033[31mUsuário inexistente!\033[m\n')
                                         print('=' * 50)
 
-                                        ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                while True:
+                                        try:
+                                                ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                                if ir_pro_cadastro.isnumeric():
+                                                        raise ValueError
+                                                if ir_pro_cadastro != 'N' and ir_pro_cadastro != 'S':
+                                                        raise ForaDeAlcance
+                                                
+                                                break
+                                        except ForaDeAlcance:
+                                                print('\033[31mDigite S para SIM e N para NÃO.\033[m')
+                                        except ValueError:
+                                                print('\033[31mDigite apenas letras.\033[m')
+
                                 if ir_pro_cadastro == 'S':
-                                        login_ou_cadastro = 2
-                                        break
+                                                login_ou_cadastro = 2
+                                                break
+                                
 
                                 else:
                                         visitante_objeto.logar()
@@ -190,10 +219,25 @@ if tipo_user == 3:
                                 if not restaurante_objeto.logar():
                                         print('\n\033[31mUsuário inexistente!\033[m\n')
                                         print('=' * 50)
-                                        ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+
+                                while True:
+                                        try:
+                                                ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                                if ir_pro_cadastro.isnumeric():
+                                                        raise ValueError
+                                                if ir_pro_cadastro != 'N' and ir_pro_cadastro != 'S':
+                                                        raise ForaDeAlcance
+                                                
+                                                break
+                                        except ForaDeAlcance:
+                                                print('\033[31mDigite S para SIM e N para NÃO.\033[m')
+                                        except ValueError:
+                                                print('\033[31mDigite apenas letras.\033[m')
+
                                 if ir_pro_cadastro == 'S':
-                                        login_ou_cadastro = 2
-                                        break
+                                                login_ou_cadastro = 2
+                                                break
+                                        
 
                                 else:
                                         restaurante_objeto.logar()
@@ -235,8 +279,23 @@ if tipo_user == 4:
                                 if not depae_objeto.logar():
                                         print('\n\033[31mUsuário inexistente!\033[m\n')
                                         print('=' * 50)
-                                        ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
-                                        if ir_pro_cadastro == 'S':
+
+
+                                while True:
+                                        try:
+                                                ir_pro_cadastro = input('Você deseja fazer o cadastro? (S/N) \n-> ').upper()
+                                                if ir_pro_cadastro.isnumeric():
+                                                        raise ValueError
+                                                if ir_pro_cadastro != 'N' and ir_pro_cadastro != 'S':
+                                                        raise ForaDeAlcance
+                                                
+                                                break
+                                        except ForaDeAlcance:
+                                                print('\033[31mDigite S para SIM e N para NÃO.\033[m')
+                                        except ValueError:
+                                                print('\033[31mDigite apenas letras.\033[m')
+
+                                if ir_pro_cadastro == 'S':
                                                 login_ou_cadastro = 2
                                                 break
 
